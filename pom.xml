@@ -16,13 +16,13 @@
 	      <version>3.8.1</version>
 	      <scope>test</scope>
 	    </dependency>
-    
-    	<dependency>
-		    <groupId>javax.servlet</groupId>
-		    <artifactId>javax.servlet-api</artifactId>
-		    <version>4.0.1</version>
-		    <scope>provided</scope>
-		</dependency>
+    <!-- incluye jave se8, web container (servlet,jsp,EL), web profile,etc-->
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>
 
 <!-- JSTL 1.2 (incluye las org.apache.taglibs 1.2.5 impl y spec) -->
 		<dependency>
