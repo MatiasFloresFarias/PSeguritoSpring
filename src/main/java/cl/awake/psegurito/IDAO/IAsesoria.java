@@ -11,7 +11,7 @@ public interface IAsesoria {
 	public boolean crearAsesoria(Asesoria asesoria);
 	public List<Asesoria> leerAsesoria();
 	public boolean actualizarAsesoria(Asesoria asesoria);
-	public boolean eliminarAsesoria(Asesoria asesoria);
+	public boolean eliminarAsesoria(int idasesoria);
 	public Asesoria obtenerAsesoria(int idasesoria);
 
 }

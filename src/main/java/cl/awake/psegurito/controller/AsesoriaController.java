@@ -20,7 +20,7 @@ public class AsesoriaController {
 	public String ListarAsesoria(Model m) {
 		List<Asesoria> listaasesoria = asesoriadao.leerAsesoria();
 		m.addAttribute("listadoasesoria",listaasesoria);
-		return "listadoasesoria";		
+		return "asesoriaCliente";		
 	}
 	
 	
