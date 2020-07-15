@@ -2,10 +2,11 @@ package cl.awake.psegurito.DAO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-
-
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -20,9 +21,9 @@ public class AsesoriaDAO implements IAsesoria {
 	}
 
 	@Override
-	public boolean crearAsesoria(Asesoria asesoria) {
-		// TODO Auto-generated method stub
-		return false;
+	public int crearAsesoria(Asesoria asesoria) {
+		String sql = "insert into asesorias (fechayhora, motivo, detalle, profesional_id_profesional, cliente_id_cliente) values (TO_DATE('" + asesoria.getFechayhora() + "','dd/mm/yyyy hh24:mi'),'" + asesoria.getMotivo() + "','" + asesoria.getDetalle() + "','" + asesoria.getId_profesional() + "','" + asesoria.getId_cliente() + "')";
+		return template.update(sql);
 	}
 
 	@Override
@@ -46,21 +47,22 @@ public class AsesoriaDAO implements IAsesoria {
 
 
 	@Override
-	public boolean actualizarAsesoria(Asesoria asesoria) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean eliminarAsesoria(Asesoria asesoria) {
-		// TODO Auto-generated method stub
-		return false;
+	public int actualizarAsesoria(Asesoria asesoria) {
+		
+		String sql = "update asesorias set fechayhora = TO_DATE('" + asesoria.getFechayhora() + "','dd/mm/yyyy hh24:mi'), motivo = '" + asesoria.getMotivo() + "', detalle = '" + asesoria.getDetalle() + "', profesional_id_profesional = '" + asesoria.getId_profesional() + "', cliente_id_cliente = '" + asesoria.getId_cliente() + "' where id_asesoria = '" + asesoria.getId_asesoria() + "'";
+		return template.update(sql);
 	}
 
 	@Override
 	public Asesoria obtenerAsesoria(int idasesoria) {
-		// TODO Auto-generated method stub
-		return null;
+	    String sql="select * from asesorias where id_asesoria=?";
+	    return template.queryForObject(sql, new Object[]{idasesoria},new BeanPropertyRowMapper<Asesoria>(Asesoria.class));
+	}
+
+	@Override
+	public int eliminarAsesoria(int idasesoria) {
+		String sql = "delete from asesorias where id_asesoria = " + idasesoria;
+		return template.update(sql);
 	}
 
 }
