@@ -2,8 +2,6 @@ package cl.awake.psegurito.DAO;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -55,7 +53,7 @@ public class AsesoriaDAO implements IAsesoria {
 
 	@Override
 	public Asesoria obtenerAsesoria(int idasesoria) {
-	    String sql="select * from asesorias where id_asesoria=?";
+	    String sql="SELECT id_asesoria, fechayhora, motivo, detalle, profesional_id_profesional as id_profesional, cliente_id_cliente as id_cliente FROM asesorias WHERE id_asesoria=?";
 	    return template.queryForObject(sql, new Object[]{idasesoria},new BeanPropertyRowMapper<Asesoria>(Asesoria.class));
 	}
 
