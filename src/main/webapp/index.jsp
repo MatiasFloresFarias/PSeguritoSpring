@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="listadoasesoria">Lista Asesoria</a>
+<a href="listadoasesoria">Lista Asesoria</a><br>
 <a href="nuevaasesoria">Agregar Nueva Asesoria</a>
 
 </body>
