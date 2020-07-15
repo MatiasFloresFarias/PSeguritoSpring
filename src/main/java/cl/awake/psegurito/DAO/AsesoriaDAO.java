@@ -27,7 +27,7 @@ public class AsesoriaDAO implements IAsesoria {
 
 	@Override
 	public List<Asesoria> leerAsesoria() {		 
-		    return template.query("select * from ASESORIAS",new RowMapper<Asesoria>(){    
+		    return template.query("SELECT id_asesoria, fechayhora, motivo, detalle, profesional_id_profesional, cliente_id_cliente, nombre || ' ' || apellido as profesional, nombreempresa as cliente FROM asesorias INNER JOIN profesional ON profesional_id_profesional=id_profesional INNER JOIN cliente ON cliente_id_cliente=id_cliente",new RowMapper<Asesoria>(){    
 		        public Asesoria mapRow(ResultSet rs, int row) throws SQLException {   
 		  
 					Asesoria c = new Asesoria();
@@ -37,9 +37,8 @@ public class AsesoriaDAO implements IAsesoria {
 					c.setDetalle(rs.getString("detalle"));
 					c.setId_profesional(rs.getInt("profesional_id_profesional"));
 					c.setId_cliente(rs.getInt("cliente_id_cliente"));
-					
-					
-					
+					c.setProfesional(rs.getString("profesional"));
+					c.setCliente(rs.getString("cliente"));			
 		            return c;
 		        }    
 		    });    
