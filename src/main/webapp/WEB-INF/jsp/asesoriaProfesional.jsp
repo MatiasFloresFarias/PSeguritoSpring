@@ -14,8 +14,10 @@
 		Fecha y Hora: <form:input path="fechayhora" /><br/>
 		Motivo: <form:input path="motivo" /><br/>
 		Detalle: <form:input path="detalle" /><br/>
-		ID Profesional: <form:input path="id_profesional" /><br/>
-		ID Cliente: <form:input path="id_cliente" /><br/>
+		Profesional: <form:select path="profesional.id_profesional"><form:options items="${listadoprofesional}" itemValue="id_profesional" itemLabel="nombreyapellido"></form:options>
+		</form:select><br/>
+		Cliente: <form:select path="cliente.id_cliente"><form:options items="${listadocliente}" itemValue="id_cliente" itemLabel="nombreEmpresa"></form:options>
+		</form:select><br/>
 		<input type="submit" value="Guardar asesoria" />
 	</form:form>
 

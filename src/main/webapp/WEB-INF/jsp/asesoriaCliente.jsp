@@ -35,8 +35,8 @@
 						<td>${asesoria.getFechayhora()}</td>
 						<td>${asesoria.getMotivo()}</td>
 						<td>${asesoria.getDetalle()}</td>
-						<td>${asesoria.getProfesional()}</td>
-						<td>${asesoria.getCliente()}</td>
+						<td>${asesoria.getProfesional().getNombre()} ${asesoria.getProfesional().getApellido()} </td>
+						<td>${asesoria.getCliente().getNombreEmpresa()}</td>
 											<td>
 			<a href="eliminarasesoria/${asesoria.getId_asesoria()}">Eliminar</a> &nbsp;
 			<a href="editarasesoria/${asesoria.getId_asesoria()}">Editar</a> &nbsp;
