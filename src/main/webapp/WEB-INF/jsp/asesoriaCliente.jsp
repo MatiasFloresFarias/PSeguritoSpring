@@ -38,10 +38,6 @@
 						<td>${asesoria.getDetalle()}</td>
 						<td>${asesoria.getProfesional().getNombre()} ${asesoria.getProfesional().getApellido()} </td>
 						<td>${asesoria.getCliente().getNombreEmpresa()}</td>
-											<td>
-			<a class="btn btn-danger" href="eliminarasesoria/${asesoria.getId_asesoria()}">Eliminar</a> &nbsp;
-			<a class="btn btn-info" href="editarasesoria/${asesoria.getId_asesoria()}">Editar</a> &nbsp;
-		</td>
 					</tr>
 				</c:forEach>
 				</tbody>

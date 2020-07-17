@@ -44,6 +44,9 @@ public class AsesoriaController {
 	@RequestMapping("/nuevaasesoria")
 	public String crearasesoria(Model m) {
 		m.addAttribute("command", new Asesoria());
+		//lista asesorias
+		List<Asesoria> listaasesoria = asesoriadao.leerAsesoria();
+		m.addAttribute("listadoasesoria", listaasesoria);
 		
 		//lista profesionales
 		List<Profesional> listaprofesional = profesionaldao.leerProfesional();
@@ -58,13 +61,13 @@ public class AsesoriaController {
 	@RequestMapping(value = "/guardarasesoria", method = RequestMethod.POST)
 	public String nuevaasesoria(Asesoria asesoria) {
 		asesoriadao.crearAsesoria(asesoria);
-		return "redirect:/listadoasesoria";
+		return "redirect:/nuevaasesoria.do";
 	}
 
 	@RequestMapping("/eliminarasesoria/{id}")
 	public String deleteasesoria(@PathVariable int id) {
 		asesoriadao.eliminarAsesoria(id);
-		return "redirect:/listadoasesoria";
+		return "redirect:/nuevaasesoria.do";
 	}
 
 	@RequestMapping(value = "/editarasesoria/{id}")
@@ -92,7 +95,7 @@ public class AsesoriaController {
 		asesoria.setFechayhora(fechayhora);
 
 		asesoriadao.actualizarAsesoria(asesoria);
-		return "redirect:/listadoasesoria";
+		return "redirect:/nuevaasesoria.do";
 	}
 
 }
