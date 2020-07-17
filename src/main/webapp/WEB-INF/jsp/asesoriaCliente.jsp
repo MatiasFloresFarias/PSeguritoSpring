@@ -18,9 +18,10 @@
 	<body>
 
 		<div class="col-sm-12">
+				<h1 class="display-4">Listado Asesoria</h1>
 
 			<table class="table table-striped">
-				<thead>
+				<thead >
 					<tr>
 						<th>Fecha y Hora</th>
 						<th>Motivo</th>
@@ -38,8 +39,8 @@
 						<td>${asesoria.getProfesional().getNombre()} ${asesoria.getProfesional().getApellido()} </td>
 						<td>${asesoria.getCliente().getNombreEmpresa()}</td>
 											<td>
-			<a href="eliminarasesoria/${asesoria.getId_asesoria()}">Eliminar</a> &nbsp;
-			<a href="editarasesoria/${asesoria.getId_asesoria()}">Editar</a> &nbsp;
+			<a class="btn btn-danger" href="eliminarasesoria/${asesoria.getId_asesoria()}">Eliminar</a> &nbsp;
+			<a class="btn btn-info" href="editarasesoria/${asesoria.getId_asesoria()}">Editar</a> &nbsp;
 		</td>
 					</tr>
 				</c:forEach>
