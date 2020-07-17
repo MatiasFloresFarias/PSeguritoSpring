@@ -23,7 +23,7 @@ public class ProfesionalDAO implements IProfesional {
 
 	@Override
 	public int crearProfesional(Profesional profesional) {
-		String sql = "INSERT INTO profesional(nombre, apellido, correo, telefono, cargo) values ('" + profesional.getNombre() + "','" + profesional.getApellido() + "','" + profesional.getCorreo() + "','" + profesional.getTelefono() + "')";
+		String sql = "INSERT INTO profesional(nombre, apellido, correo, telefono, cargo) values ('" + profesional.getNombre() + "','" + profesional.getApellido() + "','" + profesional.getCorreo() + "','" + profesional.getTelefono() + "','" + profesional.getCargo() + "')";
 		return template.update(sql);
 	}
 
@@ -49,7 +49,7 @@ public class ProfesionalDAO implements IProfesional {
 	@Override
 	public int actualizarProfesional(Profesional profesional) {
 		
-		String sql = "update profesional set nombre = '" + profesional.getNombre() + "', apellido = '" + profesional.getApellido() + "', correo = '" + profesional.getCorreo() + "', telefono = '" + profesional.getTelefono() + "', cargo = '" + profesional.getCargo() + "' where id_asesoria = '" + profesional.getId_profesional() + "'";
+		String sql = "update profesional set nombre = '" + profesional.getNombre() + "', apellido = '" + profesional.getApellido() + "', correo = '" + profesional.getCorreo() + "', telefono = '" + profesional.getTelefono() + "', cargo = '" + profesional.getCargo() + "' where id_profesional = '" + profesional.getId_profesional() + "'";
 		return template.update(sql);
 	}
 

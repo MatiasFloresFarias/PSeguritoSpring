@@ -20,7 +20,7 @@
 				
 						<div class="form-group">
 							<label>Fecha y Hora: </label><br>
-							<form:input path="fechayhora" class="form-control"/>
+							<form:input path="fechayhora" class="form-control" id="datetimepicker"/>
 						</div>
 						<div class="form-group">
 							<label>Motivo:</label><br>
@@ -88,6 +88,13 @@
 		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 		<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 		<script src="https://trentrichardson.com/examples/timepicker/jquery-ui-timepicker-addon.js"></script>
-		<script>
+				<script>
+			$(function () {
+				$('#datetimepicker').datetimepicker({
+					dateFormat: 'dd/mm/yy',
+					timeFormat: "HH:mm",
+				});
+			});
+		</script>
 </body>
 </html>
