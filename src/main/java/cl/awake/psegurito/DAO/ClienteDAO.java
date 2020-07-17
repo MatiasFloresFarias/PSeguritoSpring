@@ -7,13 +7,14 @@ import java.util.List;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import cl.awake.psegurito.IDAO.ICliente;
 import cl.awake.psegurito.bean.Cliente;
 
 
-@Service("daocliente")
+@Repository("daocliente")
 public class ClienteDAO implements ICliente {
 	JdbcTemplate template;
 	public void setTemplate(JdbcTemplate template) {

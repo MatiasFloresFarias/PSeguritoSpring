@@ -9,12 +9,13 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import cl.awake.psegurito.IDAO.IAsesoria;
 import cl.awake.psegurito.bean.Asesoria;
 
-@Service("daoasesoria")
+@Repository("daoasesoria")
 public class AsesoriaDAO implements IAsesoria {
 	
 	JdbcTemplate template;

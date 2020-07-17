@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
 import cl.awake.psegurito.IDAO.IProfesional;
 import cl.awake.psegurito.bean.Profesional;
 
-@Service("daoprofesional")
+@Repository("daoprofesional")
 public class ProfesionalDAO implements IProfesional {
 	
 	JdbcTemplate template;
