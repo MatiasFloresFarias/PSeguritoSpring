@@ -6,7 +6,7 @@ public class DetalleFactura {
 	private String nombre;
 	private int precio;
 	private int cantidad;
-	private int id_factura; //FK
+	private Factura factura; //FK
 
 	
 	//Constructures//
@@ -15,21 +15,21 @@ public class DetalleFactura {
 		super();
 	}
 
-	public DetalleFactura(String nombre, int precio, int cantidad, int id_factura) {
+	public DetalleFactura(String nombre, int precio, int cantidad, Factura factura) {
 		super();
 		this.nombre = nombre;
 		this.precio = precio;
 		this.cantidad = cantidad;
-		this.id_factura = id_factura;
+		this.factura = factura;
 	}
 	
-	public DetalleFactura(int id_detallefactura, String nombre, int precio, int cantidad, int id_factura) {
+	public DetalleFactura(int id_detallefactura, String nombre, int precio, int cantidad, Factura factura) {
 		super();
 		this.id_detallefactura = id_detallefactura;
 		this.nombre = nombre;
 		this.precio = precio;
 		this.cantidad = cantidad;
-		this.id_factura = id_factura;
+		this.factura = factura;
 	}
 
 
@@ -73,12 +73,12 @@ public class DetalleFactura {
 		this.cantidad = cantidad;
 	}
 
-	public int getId_factura() {
-		return id_factura;
+	public Factura getFactura() {
+		return factura;
 	}
 
-	public void setId_factura(int id_factura) {
-		this.id_factura = id_factura;
+	public void setFactura(Factura factura) {
+		this.factura = factura;
 	}
 	
 	//To String//
@@ -86,7 +86,7 @@ public class DetalleFactura {
 	@Override
 	public String toString() {
 		return "DetalleFactura [id_detallefactura=" + id_detallefactura + ", nombre=" + nombre + ", precio=" + precio
-				+ ", cantidad=" + cantidad + ", id_factura=" + id_factura + "]";
+				+ ", cantidad=" + cantidad + ", factura=" + factura + "]";
 	}
 	
 	public double calcularTotal() { 

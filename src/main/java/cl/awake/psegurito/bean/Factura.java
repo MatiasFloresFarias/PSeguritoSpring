@@ -35,6 +35,21 @@ public class Factura {
 
 	}
 	
+	public Factura(int id_factura, String fechadecobro, String fechaVencimiento, int extras, int impuestos, int subtotal, int total,
+			Cliente cliente) {
+		super();
+		this.id_factura = id_factura;
+		this.fechadecobro = fechadecobro;
+		this.fechaVencimiento = fechaVencimiento;
+		this.extras = extras;
+		this.impuestos = impuestos;
+		this.subtotal = subtotal;
+		this.total = total;
+		this.cliente = cliente; 
+
+	}
+	
+	
 	public Factura(int id_factura, String fechadecobro, String fechaVencimiento, int extras, int impuestos,
 			int subtotal, int total, Cliente cliente, List<DetalleFactura> items, double iva) {
 		this.id_factura = id_factura;

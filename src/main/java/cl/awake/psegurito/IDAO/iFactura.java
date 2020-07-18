@@ -6,10 +6,10 @@ import cl.awake.psegurito.bean.Factura;
 
 
 public interface iFactura {
-	public boolean crearFactura(Factura fac);
+	public int crearFactura(Factura fac);
 	public List<Factura> leerFactura();
-	public boolean actualizarFactura(Factura fac);
-	public boolean eliminarFactura(Factura fac);
+	public int actualizarFactura(Factura fac);
+	public int eliminarFactura(int id_factura);
 	Factura obtenerFactura(int id_factura);
 
 
