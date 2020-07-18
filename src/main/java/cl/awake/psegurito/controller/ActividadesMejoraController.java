@@ -1,5 +1,7 @@
 package cl.awake.psegurito.controller;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,12 +59,44 @@ public class ActividadesMejoraController {
 		
 	}
 	
-	@RequestMapping(value = "/guardarasesoria", method = RequestMethod.POST)
+	@RequestMapping(value = "/guardaractividadmejora", method = RequestMethod.POST)
 	public String nuevaactividadmejora(ActividadesMejora actividadesMejora) {
 		actividadmejoradao.crearActividadesMejora(actividadesMejora);
 		return "redirect:/nuevaactividadmejora.do";
 	}
 	
+	@RequestMapping("/eliminaractividadmejora/{id}")
+	public String deleteactividadmejora(@PathVariable int id) {
+		actividadmejoradao.eliminarActividadesMejora(id);
+		return "redirect:/nuevaactividadmejora.do";
+	}
 	
+	@RequestMapping(value = "/editaractividadmejora/{id}")
+	public String edit(@PathVariable int id, Model m) {
+		ActividadesMejora actividadmejora = actividadmejoradao.obtenerActividadesMejora(id);
+		
+		//Tranforma fechaInicio para que se vea en el formato sql
+		String fechainicio1 = actividadmejora.getFechaInicio();
+		LocalDateTime datetime = LocalDateTime.parse(fechainicio1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		String fechainicio = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+		actividadmejora.setFechaInicio(fechainicio);
+		
+		//Lo mismo con fechaTermino
+		String fechatermino1 = actividadmejora.getFechaTermino();
+		LocalDateTime datetime1 = LocalDateTime.parse(fechatermino1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		String fechatermino = datetime1.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+		actividadmejora.setFechaInicio(fechatermino);
+		
+		System.out.println(actividadmejora.getProfesional());
+		//Lista profesionales
+		List<Profesional> listaprofesional = profesionaldao.leerProfesional();
+		m.addAttribute("listadoprofesional", listaprofesional);
+		//Lista clientes
+		List<Cliente> listacliente =  clientedao.leerCliente();
+		m.addAttribute("listadocliente",listacliente);
+		
+		m.addAttribute("command", actividadmejora);
+		return "actividadmejoraEditar";
+	}
 	
 }
