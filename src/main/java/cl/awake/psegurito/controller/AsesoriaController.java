@@ -4,7 +4,8 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,9 @@ import cl.awake.psegurito.bean.Profesional;
 
 @Controller
 public class AsesoriaController {
+	
+	private static final Logger logger = LogManager.getLogger("MyFile");
+	
 	@Autowired
 	@Qualifier("daoasesoria")
 	AsesoriaDAO asesoriadao;
@@ -36,6 +40,13 @@ public class AsesoriaController {
 	// metodo listar
 	@RequestMapping("/listadoasesoria")
 	public String ListarAsesoria(Model m) {
+		//Log4J
+	      logger.trace("Trace Message!");
+	      logger.debug("Debug Message!");
+	      logger.info("Info Message!");
+	      logger.warn("Warn Message!");
+	      logger.error("Error Message!");
+	      logger.fatal("Fatal Message!");
 		List<Asesoria> listaasesoria = asesoriadao.leerAsesoria();
 		m.addAttribute("listadoasesoria", listaasesoria);
 		return "asesoriaCliente";
