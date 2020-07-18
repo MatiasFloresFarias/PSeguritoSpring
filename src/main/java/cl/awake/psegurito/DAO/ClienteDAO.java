@@ -46,13 +46,13 @@ public class ClienteDAO implements ICliente {
 	@Override
 	public int actualizarCliente(Cliente cliente) {
 		
-		String sql = "update cliente set nombreempresa = '" + cliente.getNombreEmpresa() + "', rutempresa = '" + cliente.getRut() + "', fecharegistro = TO_DATE('" + cliente.getFechaRegistro() +"','dd/mm/yyyy'), where id_cliente = '" + cliente.getId_cliente() + "'";
+		String sql = "update cliente set nombreempresa = '" + cliente.getNombreEmpresa() + "', rutempresa = '" + cliente.getRut() + "', fecharegistro = TO_DATE('" + cliente.getFechaRegistro() +"','dd/mm/yyyy') where id_cliente = '" + cliente.getId_cliente() + "'";
 		return template.update(sql);
 	}
 
 	@Override
 	public Cliente obtenerCliente(int idcliente) {
-	    String sql="SELECT id_cliente, nombreempresa, rutempresa, fecharegistro FROM cliente WHERE id_cliente=?";
+	    String sql="SELECT id_cliente, nombreempresa, rutempresa as rut, fecharegistro FROM cliente WHERE id_cliente=?";
 	    return template.queryForObject(sql, new Object[]{idcliente},new BeanPropertyRowMapper<Cliente>(Cliente.class));
 	}
 
