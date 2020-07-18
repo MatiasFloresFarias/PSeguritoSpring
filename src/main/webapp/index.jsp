@@ -36,8 +36,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" target="myFrame">Control Profesional</a>
-                        <a class="dropdown-item" href="#" target="myFrame">Control Cliente</a>
+                        <a class="dropdown-item" href="profesional" target="myFrame">Control Profesional</a>
+                        <a class="dropdown-item" href="cliente" target="myFrame">Control Cliente</a>
                         <a class="dropdown-item" href="#" target="myFrame">Facturacion Clientes</a>
                     </div>
                 </li>

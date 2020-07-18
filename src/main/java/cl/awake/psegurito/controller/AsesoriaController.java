@@ -73,6 +73,14 @@ public class AsesoriaController {
 	@RequestMapping(value = "/editarasesoria/{id}")
 	public String edit(@PathVariable int id, Model m) {
 		Asesoria asesoria = asesoriadao.obtenerAsesoria(id);
+		
+		// transformo las fechas pa q se vean en el mismo formato q acepta sql
+		String fechayhora1 = asesoria.getFechayhora();
+		LocalDateTime datetime = LocalDateTime.parse(fechayhora1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
+		String fechayhora = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+		asesoria.setFechayhora(fechayhora);
+		
+		
 		System.out.println(asesoria.getProfesional());
 		//lista profesionales
 		List<Profesional> listaprofesional = profesionaldao.leerProfesional();
@@ -87,13 +95,6 @@ public class AsesoriaController {
 
 	@RequestMapping(value = "/guardareditasesoria", method = RequestMethod.POST)
 	public String editsave(Asesoria asesoria) {
-
-		// transformo las fechas pa q se vean en el mismo formato q acepta sql
-		String fechayhora1 = asesoria.getFechayhora();
-		LocalDateTime datetime = LocalDateTime.parse(fechayhora1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-		String fechayhora = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
-		asesoria.setFechayhora(fechayhora);
-
 		asesoriadao.actualizarAsesoria(asesoria);
 		return "redirect:/nuevaasesoria.do";
 	}

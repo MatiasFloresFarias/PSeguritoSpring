@@ -17,16 +17,18 @@ public class ProfesionalController {
 	@Autowired
 	ProfesionalDAO profesionaldao;
 	
-	//metodo listar 
-	@RequestMapping("/listadoprofesional")
-	public String ListarProfesional(Model m) {
+//	//metodo listar 
+//	@RequestMapping("/listadoprofesional")
+//	public String ListarProfesional(Model m) {
+//		List<Profesional> listaprofesional = profesionaldao.leerProfesional();
+//		m.addAttribute("listadoprofesional",listaprofesional);
+//		return "profesional";		
+//	}
+	
+	@RequestMapping("/profesional")
+	public String crearprofesional(Model m) {
 		List<Profesional> listaprofesional = profesionaldao.leerProfesional();
 		m.addAttribute("listadoprofesional",listaprofesional);
-		return "profesionalCliente";		
-	}
-	
-	@RequestMapping("/nuevoprofesional")
-	public String crearprofesional(Model m) {
 		m.addAttribute("command",new Profesional());
 		return "profesional";
 	}
@@ -34,13 +36,13 @@ public class ProfesionalController {
     @RequestMapping(value="/guardarprofesional", method = RequestMethod.POST)
     public String nuevoprofesional(Profesional profesional){
         profesionaldao.crearProfesional(profesional);
-        return "redirect:/listadoprofesional";
+        return "redirect:/profesional.do";
     }
 	
 	@RequestMapping("/eliminarprofesional/{id}")
     public String deleteprofesional(@PathVariable int id) {
     	profesionaldao.eliminarProfesional(id);
-        return "redirect:/listadoprofesional";
+        return "redirect:/profesional.do";
     }
 	
     @RequestMapping(value="/editarprofesional/{id}")    
@@ -53,7 +55,7 @@ public class ProfesionalController {
     @RequestMapping(value="/guardareditprofesional", method = RequestMethod.POST)    
     public String editsave(Profesional profesional){
         profesionaldao.actualizarProfesional(profesional);
-        return "redirect:/listadoprofesional";
+        return "redirect:/profesional.do";
     }
   
 
