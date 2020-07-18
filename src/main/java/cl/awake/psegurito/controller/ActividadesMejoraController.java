@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import cl.awake.psegurito.DAO.ActividadesMejoraDao;
+import cl.awake.psegurito.DAO.ActividadesMejoraDAO;
 import cl.awake.psegurito.DAO.ClienteDAO;
 import cl.awake.psegurito.DAO.ProfesionalDAO;
 import cl.awake.psegurito.bean.ActividadesMejora;
@@ -23,7 +23,7 @@ import cl.awake.psegurito.bean.Profesional;
 public class ActividadesMejoraController {
 	@Autowired
 	@Qualifier("daoactividadmejora")
-	ActividadesMejoraDao actividadmejoradao;
+	ActividadesMejoraDAO actividadmejoradao;
 	@Autowired
 	@Qualifier("daoprofesional")
 	ProfesionalDAO profesionaldao;

@@ -44,8 +44,10 @@
 <!-- 	<bean id="daodetallefactura" class="cl.awake.psegurito.DAO.DetalleFacturaDAO">     -->
 <!-- 		<property name="template" ref="jt"></property>     -->
 <!-- 	</bean> -->
-	<bean id="daocapacitacion" class="cl.awake.psegurito.DAO.CapacitacionDAO">    
+<!-- 	<bean id="daocapacitacion" class="cl.awake.psegurito.DAO.CapacitacionDAO">     -->
+<!-- 		<property name="template" ref="jt"></property>     -->
+<!-- 	</bean> -->
+		<bean id="daoactividadmejora" class="cl.awake.psegurito.DAO.ActividadesMejoraDAO">    
 		<property name="template" ref="jt"></property>    
 	</bean>
-	
 </beans>

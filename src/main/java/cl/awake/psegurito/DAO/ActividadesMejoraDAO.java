@@ -14,7 +14,7 @@ import cl.awake.psegurito.IDAO.IActividadesMejora;
 import cl.awake.psegurito.bean.ActividadesMejora;
 
 @Repository("daoactividadesmejora")
-public class ActividadesMejoraDao implements IActividadesMejora{
+public class ActividadesMejoraDAO implements IActividadesMejora{
 	
 	
 	JdbcTemplate template;
