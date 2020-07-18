@@ -47,4 +47,5 @@
 	<bean id="daocapacitacion" class="cl.awake.psegurito.DAO.CapacitacionDAO">    
 		<property name="template" ref="jt"></property>    
 	</bean>
+	
 </beans>
