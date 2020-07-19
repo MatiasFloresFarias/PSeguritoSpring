@@ -20,7 +20,7 @@
 		<div class="d-sm-flex">
 			<div class="card col-sm-4">
 				<div class="card-body">
-					<form:form method="post" action="guardardetallefactura">
+					<form:form method="post" action="../guardardetallefactura">
 						<div class="form-group">
 							<label>Nombre: </label>
 							<form:input path="nombre" class="form-control" />

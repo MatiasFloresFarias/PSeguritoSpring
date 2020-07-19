@@ -27,10 +27,11 @@ public class DetalleFacturaDAO implements iDetalleFactura {
 	}
 	
 	@Override
-	public int crearDetalleFactura(DetalleFactura detallefac) {
-		String sql = "INSERT INTO detallefactura(nombre, precio, cantidad, factura_id_factura) values ('" + detallefac.getNombre() + "','" + detallefac.getPrecio() +"','" + detallefac.getCantidad() + "','"  + detallefac.getFactura().getId_factura() + "')";
+	public int crearDetalleFactura(DetalleFactura detallefactura) {
+		String sql = "INSERT INTO detallefactura(nombre, precio, cantidad, factura_id_factura) values ('" + detallefactura.getNombre() + "','" + detallefactura.getPrecio() +"','" + detallefactura.getCantidad() + "','"  + detallefactura.getFactura().getId_factura() + "')";
 		return template.update(sql);
 	}
+	
 
 	@Override
 	public List<DetalleFactura> leerDetalleFactura(int id_factura) {

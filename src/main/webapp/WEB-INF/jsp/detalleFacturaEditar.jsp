@@ -19,7 +19,7 @@
 			<div class="col align-self-start"></div>
 			<div class="col align-self-center">
 				<h1 class="display-4">Editar Detalle Factura</h1>
-				<form:form method="post" action="../guardareditdetallefactura">
+				<form:form method="post" action="../../guardareditdetallefactura">
 					<div class="form-group">
 						<label>Nombre: </label>
 						<form:input path="nombre" class="form-control" />
@@ -37,12 +37,11 @@
 					</div>
 					<div class="form-group">
 						<label>Factura: </label>
-							<form:select path="cliente.id_cliente" class="form-control form-control"><form:options items="${listadocliente}" itemValue="id_cliente" itemLabel="nombreEmpresa" readonly="true"></form:options>
-							</form:select>
+						<form:input path="factura.id_factura" value="${id_factura}" class="form-control" readonly="true"/>
 					</div>
 					<input type="submit" name="accion" value="Editar" class="btn btn-info">
 					<a class="btn btn-info"
-						href="${pageContext.request.contextPath}/CrearDetalleFactura?id=${facturaid}">Cancelar</a>
+						href="#">Cancelar</a>
 				</form:form>
 			</div>
 			<div class="col align-self-end"></div>
