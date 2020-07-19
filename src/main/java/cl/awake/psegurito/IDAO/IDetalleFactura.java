@@ -5,7 +5,7 @@ import java.util.List;
 import cl.awake.psegurito.bean.DetalleFactura;
 
 
-public interface iDetalleFactura {
+public interface IDetalleFactura {
 
     public int crearDetalleFactura(DetalleFactura detallefac);
     public List<DetalleFactura> leerDetalleFactura(int id_factura);

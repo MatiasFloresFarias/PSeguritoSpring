@@ -10,11 +10,11 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
-import cl.awake.psegurito.IDAO.iDetalleFactura;
+import cl.awake.psegurito.IDAO.IDetalleFactura;
 import cl.awake.psegurito.bean.DetalleFactura;
 
 @Repository("daodetallefactura")
-public class DetalleFacturaDAO implements iDetalleFactura {
+public class DetalleFacturaDAO implements IDetalleFactura {
 	JdbcTemplate template;
 	
 	@Autowired

@@ -5,7 +5,7 @@ import java.util.List;
 import cl.awake.psegurito.bean.Factura;
 
 
-public interface iFactura {
+public interface IFactura {
 	public int crearFactura(Factura fac);
 	public List<Factura> leerFactura();
 	public int actualizarFactura(Factura fac);

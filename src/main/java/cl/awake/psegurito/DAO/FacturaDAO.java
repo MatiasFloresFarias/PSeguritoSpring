@@ -9,10 +9,10 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
-import cl.awake.psegurito.IDAO.iFactura;
+import cl.awake.psegurito.IDAO.IFactura;
 import cl.awake.psegurito.bean.Factura;
 
-public class FacturaDAO implements iFactura {
+public class FacturaDAO implements IFactura {
 	
 	JdbcTemplate template;
 	
