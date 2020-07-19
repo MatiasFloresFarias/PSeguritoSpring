@@ -16,10 +16,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import cl.awake.psegurito.DAO.ClienteDAO;
 import cl.awake.psegurito.DAO.FacturaDAO;
-import cl.awake.psegurito.bean.Asesoria;
 import cl.awake.psegurito.bean.Cliente;
 import cl.awake.psegurito.bean.Factura;
-import cl.awake.psegurito.bean.Profesional;
 
 @Controller
 public class FacturaController {
@@ -80,12 +78,12 @@ public class FacturaController {
 		// transformo las fechas pa q se vean en el mismo formato q acepta sql
 		String fechayhora1 = factura.getFechadecobro();
 		LocalDateTime datetime = LocalDateTime.parse(fechayhora1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-		String fechayhora = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+		String fechayhora = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		factura.setFechadecobro(fechayhora);
 		
 		String fechayhora2 = factura.getFechaVencimiento();
 		LocalDateTime datetime2 = LocalDateTime.parse(fechayhora2, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-		String fechayhora3 = datetime2.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+		String fechayhora3 = datetime2.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		factura.setFechaVencimiento(fechayhora3);
 		
 		//lista clientes

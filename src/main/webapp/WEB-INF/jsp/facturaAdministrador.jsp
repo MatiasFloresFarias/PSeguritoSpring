@@ -90,7 +90,7 @@
 								<a class="btn btn-danger"
 									href="${pageContext.request.contextPath}/eliminarfactura/${factura.getId_factura()}">Eliminar</a>
 								<a class="btn btn-success"
-									href="${pageContext.request.contextPath}/creardetallefactura/${factura.getId_factura()}">Detalle
+									href="nuevodetallefactura/${factura.getId_factura()}">Detalle
 									Factura</a>
 							</td>
 						</tr>

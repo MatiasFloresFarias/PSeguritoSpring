@@ -7,10 +7,10 @@ import cl.awake.psegurito.bean.DetalleFactura;
 
 public interface iDetalleFactura {
 
-    public boolean crearDetalleFactura(DetalleFactura detallefac);
+    public int crearDetalleFactura(DetalleFactura detallefac);
     public List<DetalleFactura> leerDetalleFactura(int id_factura);
-    public boolean actualizarDetalleFactura(DetalleFactura detallefac);
-    public boolean eliminarDetalleFactura(DetalleFactura detallefac);
+    public int actualizarDetalleFactura(DetalleFactura detallefac);
+    public int eliminarDetalleFactura(int id_detallefactura);
     DetalleFactura obtenerDetalleFactura(int id_detallefactura);
 
 }

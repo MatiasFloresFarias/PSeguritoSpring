@@ -7,7 +7,7 @@
 
 <head>
 	<meta charset="ISO-8859-1">
-	<title>Listado de facturas</title>
+	<title>Detalle Factura</title>
 	<!-- Css de boostrap -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 		integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,36 +21,26 @@
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Fecha de cobro</th>
-						<th>Fecha de vencimiento</th>
-						<th>Extras</th>
-						<th>Impuestos</th>
-						<th>Subtotales</th>
-						<th>Total</th>
-						<th>Cliente</th>
+						<th>Nombre</th>
+						<th>Precio</th>
+						<th>Cantidad</th>
+						<th>Factura</th>
 					</tr>
 				</thead>
 				</tbody>
-				<c:forEach items='${listadofactura}' var='factura'>
+				<c:forEach items='${listadodetallefactura}' var='detallefactura'>
 					<tr>
-						<td>${factura.getFechadecobro()}</td>
-						<td>${factura.getFechaVencimiento()}</td>
-						<td>${factura.getExtras()}</td>
-						<td>${factura.getImpuestos()}</td>
-						<td>${factura.getSubtotal()}</td>
-						<td>${factura.getTotal()}</td>
-						<td>${factura.getCliente().getNombreEmpresa()}</td>
-						<td>
-							<a class="btn btn-success"
-								href="listadodetallefactura/${factura.getId_factura()}">Mas
-								Detalles</a>
-						</td>
+						<td>${detallefactura.getNombre()}</td>
+						<td>${detallefactura.getPrecio()}</td>
+						<td>${detallefactura.getCantidad()}</td>
+						<td>${detallefactura.getFactura().getId_factura()}</td>
 					</tr>
 				</c:forEach>
 				</tbody>
 			</table>
 		</div>
 
+		<a class="btn btn-success" href="../listadofactura">Volver a facturas</a>
 
 
 		<!-- Jss boostrap -->

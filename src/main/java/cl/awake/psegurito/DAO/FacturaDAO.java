@@ -10,7 +10,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
 import cl.awake.psegurito.IDAO.iFactura;
-import cl.awake.psegurito.bean.Asesoria;
 import cl.awake.psegurito.bean.Factura;
 
 public class FacturaDAO implements iFactura {
