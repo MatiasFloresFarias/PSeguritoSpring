@@ -2,7 +2,7 @@ package cl.awake.psegurito.bean;
 
 public class Asesoria {
 	//atribrutos 
-	
+	 
 	private int id_asesoria;
 	private String fechayhora;
 	private String motivo;

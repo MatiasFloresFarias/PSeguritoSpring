@@ -35,7 +35,19 @@
 	<bean id="daoprofesional" class="cl.awake.psegurito.DAO.ProfesionalDAO">    
 		<property name="template" ref="jt"></property>    
 	</bean>
-		<bean id="daocliente" class="cl.awake.psegurito.DAO.ClienteDAO">    
+	<bean id="daocliente" class="cl.awake.psegurito.DAO.ClienteDAO">    
+		<property name="template" ref="jt"></property>    
+	</bean>
+	<bean id="daofactura" class="cl.awake.psegurito.DAO.FacturaDAO">    
+		<property name="template" ref="jt"></property>    
+	</bean>
+<!-- 	<bean id="daodetallefactura" class="cl.awake.psegurito.DAO.DetalleFacturaDAO">     -->
+<!-- 		<property name="template" ref="jt"></property>     -->
+<!-- 	</bean> -->
+<!-- 	<bean id="daocapacitacion" class="cl.awake.psegurito.DAO.CapacitacionDAO">     -->
+<!-- 		<property name="template" ref="jt"></property>     -->
+<!-- 	</bean> -->
+		<bean id="daoactividadmejora" class="cl.awake.psegurito.DAO.ActividadesMejoraDAO">    
 		<property name="template" ref="jt"></property>    
 	</bean>
         <bean id="daocapacitacion" class="cl.awake.psegurito.DAO.CapacitacionDAO">    

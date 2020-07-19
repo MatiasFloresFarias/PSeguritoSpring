@@ -37,8 +37,8 @@ uri="http://java.sun.com/jsp/jstl/core"%>
 
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="profesional" target="myFrame">Control Profesional</a>
-                        <a class="dropdown-item" href="#" target="myFrame">Control Cliente</a>
-                        <a class="dropdown-item" href="#" target="myFrame">Facturacion Clientes</a>
+                        <a class="dropdown-item" href="cliente" target="myFrame">Control Cliente</a>
+                        <a class="dropdown-item" href="nuevafactura" target="myFrame">Facturacion Clientes</a>
                     </div>
                 </li>
 
@@ -64,10 +64,10 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#" target="myFrame">Actividades a mejorar</a>
-                        <a class="dropdown-item" href="listadoasesoria"target="myFrame">Revisar Asesorias</a>
+                        <a class="dropdown-item" href="listadoasesoria" target="myFrame">Revisar Asesorias</a>
                         <a class="dropdown-item" href="#" target=" myFrame">Revisar Capacitaciones</a>
                         <a class="dropdown-item" href="#" target="myFrame">Reportar Accidente</a>
-                        <a class="dropdown-item" href="#" target="myFrame">Facturacion</a>
+                        <a class="dropdown-item" href="listadofactura" target="myFrame">Facturacion</a>
                     </div>
                 </li>
             </ul>
