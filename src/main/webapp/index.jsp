@@ -51,7 +51,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="nuevaactividadmejora" target="myFrame">Ingresar Actividad a mejorar</a>
                         <a class="dropdown-item" href="nuevaasesoria" target="myFrame">Agendar Asesoria</a>
-                        <a class="dropdown-item" href="#" target="myFrame">Agendar Capacitacion</a>
+                        <a class="dropdown-item" href="nuevacapacitacion" target="myFrame">Agendar Capacitacion</a>
                         <a class="dropdown-item" href="listadoreporteaccidente" target="myFrame">Revisar Accidentes</a>
                         <a class="dropdown-item" href="listadofactura" target="myFrame">Revisar Facturacion de clientes</a>
                     </div>
@@ -65,7 +65,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="listadoactividadesmejora" target="myFrame">Actividades a mejorar</a>
                         <a class="dropdown-item" href="listadoasesoria" target="myFrame">Revisar Asesorias</a>
-                        <a class="dropdown-item" href="#" target=" myFrame">Revisar Capacitaciones</a>
+                        <a class="dropdown-item" href="listadocapacitacion" target="myFrame">Revisar Capacitaciones</a>
                         <a class="dropdown-item" href="nuevoreporteaccidente" target="myFrame">Reportar Accidente</a>
                         <a class="dropdown-item" href="listadofactura" target="myFrame">Facturacion</a>
                     </div>

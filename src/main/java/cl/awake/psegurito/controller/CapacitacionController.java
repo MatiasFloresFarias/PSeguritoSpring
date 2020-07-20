@@ -4,8 +4,6 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
@@ -23,8 +21,6 @@ import cl.awake.psegurito.bean.Profesional;
 
 @Controller
 public class CapacitacionController {
-
-    private static final Logger logger = LogManager.getLogger("MyFile");
     
     @Autowired
     @Qualifier("daocapacitacion")
@@ -38,13 +34,7 @@ public class CapacitacionController {
     
     @RequestMapping("/listadocapacitacion")
     public String ListarCapacitacion(Model m) {
-            //Log4J
-          logger.trace("Trace Message!");
-          logger.debug("Debug Message!");
-          logger.info("Info Message!");
-          logger.warn("Warn Message!");
-          logger.error("Error Message!");
-          logger.fatal("Fatal Message!");
+
             List<Capacitacion> listacapacitacion = capacitaciondao.leerCapacitacion();
             m.addAttribute("listadocapacitacion", listacapacitacion);
             return "capacitacionCliente";
