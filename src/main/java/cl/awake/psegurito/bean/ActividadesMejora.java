@@ -6,8 +6,8 @@ public class ActividadesMejora {
 	private String nombre;
 	private String fechaInicio;
 	private String fechaTermino;
-	private String Estado;
-	private String Detalle;
+	private String estado;
+	private String detalle;
 	private Profesional profesional;
 	private Cliente cliente;
 	
@@ -22,8 +22,8 @@ public class ActividadesMejora {
 		this.nombre = nombre;
 		this.fechaInicio = fechaInicio;
 		this.fechaTermino = fechaTermino;
-		Estado = estado;
-		Detalle = detalle;
+		this.estado = estado;
+		this.detalle = detalle;
 		this.profesional = profesional;
 		this.cliente = cliente;
 	}
@@ -34,8 +34,8 @@ public class ActividadesMejora {
 		this.nombre = nombre;
 		this.fechaInicio = fechaInicio;
 		this.fechaTermino = fechaTermino;
-		Estado = estado;
-		Detalle = detalle;
+		this.estado = estado;
+		this.detalle = detalle;
 		this.profesional = profesional;
 		this.cliente = cliente;
 	}
@@ -73,19 +73,19 @@ public class ActividadesMejora {
 	}
 
 	public String getEstado() {
-		return Estado;
+		return estado;
 	}
 
 	public void setEstado(String estado) {
-		Estado = estado;
+		this.estado = estado;
 	}
 
 	public String getDetalle() {
-		return Detalle;
+		return detalle;
 	}
 
 	public void setDetalle(String detalle) {
-		Detalle = detalle;
+		this.detalle = detalle;
 	}
 
 	public Profesional getProfesional() {
@@ -107,7 +107,7 @@ public class ActividadesMejora {
 	@Override
 	public String toString() {
 		return "ActividadesMejora [idActividadMejora=" + idActividadMejora + ", nombre=" + nombre + ", fechaInicio="
-				+ fechaInicio + ", fechaTermino=" + fechaTermino + ", Estado=" + Estado + ", Detalle=" + Detalle
+				+ fechaInicio + ", fechaTermino=" + fechaTermino + ", estado=" + estado + ", detalle=" + detalle
 				+ ", profesional=" + profesional + ", cliente=" + cliente + "]";
 	}
 

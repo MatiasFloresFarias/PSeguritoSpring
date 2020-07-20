@@ -16,6 +16,7 @@ import cl.awake.psegurito.DAO.ActividadesMejoraDAO;
 import cl.awake.psegurito.DAO.ClienteDAO;
 import cl.awake.psegurito.DAO.ProfesionalDAO;
 import cl.awake.psegurito.bean.ActividadesMejora;
+import cl.awake.psegurito.bean.Asesoria;
 import cl.awake.psegurito.bean.Cliente;
 import cl.awake.psegurito.bean.Profesional;
 
@@ -36,7 +37,7 @@ public class ActividadesMejoraController {
 	public String listarActividadesMejora(Model m) {
 		List<ActividadesMejora> listaactividadesmejora = actividadmejoradao.leerActividadesMejora();
 		m.addAttribute("listadoactividadesmejora",listaactividadesmejora);
-		return "actividadesMejoraVista";//Verlista
+		return "actividadMejoraCliente";//Verlista
 	}
 	
 	//Crear
@@ -55,7 +56,7 @@ public class ActividadesMejoraController {
 		List<Cliente> listacliente = clientedao.leerCliente();
 		m.addAttribute("listadocliente", listacliente);
 		
-		return "actividadesMejoraCRUD";//Editable
+		return "actividadMejoraProfesional";//Editable
 		
 	}
 	
@@ -78,14 +79,14 @@ public class ActividadesMejoraController {
 		//Tranforma fechaInicio para que se vea en el formato sql
 		String fechainicio1 = actividadmejora.getFechaInicio();
 		LocalDateTime datetime = LocalDateTime.parse(fechainicio1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-		String fechainicio = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
+		String fechainicio = datetime.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
 		actividadmejora.setFechaInicio(fechainicio);
 		
 		//Lo mismo con fechaTermino
 		String fechatermino1 = actividadmejora.getFechaTermino();
 		LocalDateTime datetime1 = LocalDateTime.parse(fechatermino1, DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss"));
-		String fechatermino = datetime1.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm"));
-		actividadmejora.setFechaInicio(fechatermino);
+		String fechatermino = datetime1.format(DateTimeFormatter.ofPattern("dd/MM/yyyy"));
+		actividadmejora.setFechaTermino(fechatermino);
 		
 		System.out.println(actividadmejora.getProfesional());
 		//Lista profesionales
@@ -96,7 +97,13 @@ public class ActividadesMejoraController {
 		m.addAttribute("listadocliente",listacliente);
 		
 		m.addAttribute("command", actividadmejora);
-		return "actividadmejoraEditar";
+		return "actividadMejoraEditar";
+	}
+	
+	@RequestMapping(value = "/guardareditactividadmejora", method = RequestMethod.POST)
+	public String editsave(ActividadesMejora actividadesmejora) {
+		actividadmejoradao.actualizarActividadesMejora(actividadesmejora);
+		return "redirect:/nuevaactividadmejora.do";
 	}
 	
 }

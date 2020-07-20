@@ -49,7 +49,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                         Datos Profesional
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" target="myFrame">Ingresar Actividad a mejorar</a>
+                        <a class="dropdown-item" href="nuevaactividadmejora" target="myFrame">Ingresar Actividad a mejorar</a>
                         <a class="dropdown-item" href="nuevaasesoria" target="myFrame">Agendar Asesoria</a>
                         <a class="dropdown-item" href="#" target="myFrame">Agendar Capacitacion</a>
                         <a class="dropdown-item" href="listadoreporteaccidente" target="myFrame">Revisar Accidentes</a>
@@ -63,7 +63,7 @@ uri="http://java.sun.com/jsp/jstl/core"%>
                         Datos Cliente
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#" target="myFrame">Actividades a mejorar</a>
+                        <a class="dropdown-item" href="listadoactividadesmejora" target="myFrame">Actividades a mejorar</a>
                         <a class="dropdown-item" href="listadoasesoria" target="myFrame">Revisar Asesorias</a>
                         <a class="dropdown-item" href="#" target=" myFrame">Revisar Capacitaciones</a>
                         <a class="dropdown-item" href="nuevoreporteaccidente" target="myFrame">Reportar Accidente</a>

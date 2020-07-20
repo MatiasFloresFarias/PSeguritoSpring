@@ -32,13 +32,13 @@ public class ActividadesMejoraDAO implements IActividadesMejora{
 	
 	@Override
 	public int crearActividadesMejora(ActividadesMejora actividadesMejora) {
-		String sql = "insert into actividadesmejora (nombre, fechainicio, fechatermino, estado, detalle, profesional_id_profesional, cliente_id_cliente) values '"+ actividadesMejora.getNombre()+"', (TO_DATE('"+ actividadesMejora.getFechaInicio()+"','dd/mm/yyyy hh24:mi'), (TO_DATE('"+actividadesMejora.getFechaTermino()+"','dd/mm/yyyy hh24:mi'), '"+actividadesMejora.getEstado()+"', '"+actividadesMejora.getDetalle()+"', '"+actividadesMejora.getProfesional().getId_profesional()+"', '"+actividadesMejora.getCliente().getId_cliente()+"')";
+		String sql = "insert into actividadesmejora (nombre, fechainicio, fechatermino, estado, detalle, profesional_id_profesional, cliente_id_cliente) values ('"+ actividadesMejora.getNombre()+"', TO_DATE('"+ actividadesMejora.getFechaInicio()+"','dd/mm/yyyy'), TO_DATE('"+actividadesMejora.getFechaTermino()+"','dd/mm/yyyy'), '"+actividadesMejora.getEstado()+"', '"+actividadesMejora.getDetalle()+"', '"+actividadesMejora.getProfesional().getId_profesional()+"', '"+actividadesMejora.getCliente().getId_cliente()+"')";
 		return template.update(sql);
 	}
 
 	@Override
 	public List<ActividadesMejora> leerActividadesMejora() {
-		return template.query("SELECT idactividadmejora, nombre, fechainicio, fechatermino, estado, detalle, profesiona_id_profesional, cliente_id_cliente FROM actividadesmejora", new RowMapper<ActividadesMejora>() {
+		return template.query("SELECT idactividadmejora, nombre, fechainicio, fechatermino, estado, detalle, profesional_id_profesional, cliente_id_cliente FROM actividadesmejora", new RowMapper<ActividadesMejora>() {
 			public ActividadesMejora mapRow(ResultSet rs, int row) throws SQLException{
 				ActividadesMejora c = new ActividadesMejora();
 				c.setIdActividadMejora(rs.getInt("idactividadmejora"));
@@ -56,7 +56,7 @@ public class ActividadesMejoraDAO implements IActividadesMejora{
 
 	@Override
 	public int actualizarActividadesMejora(ActividadesMejora actividadesMejora) {
-		String sql = "update actividadesmejora set nombre = '"+ actividadesMejora.getNombre()+"', fehcainicio = (TO_DATE('"+ actividadesMejora.getFechaInicio()+"','dd/mm/yyyy hh24:mi'), fechatermino =  (TO_DATE('"+actividadesMejora.getFechaTermino()+"','dd/mm/yyyy hh24:mi'), estado = '"+actividadesMejora.getEstado()+"', detalle = '"+actividadesMejora.getDetalle()+"', profesional_id_profesional = '"+actividadesMejora.getProfesional().getId_profesional()+"', cliente_id_cliente = '"+actividadesMejora.getCliente().getId_cliente()+"' where idactividadmejora = '"+actividadesMejora.getIdActividadMejora()+"'";
+		String sql = "update actividadesmejora set nombre = '"+ actividadesMejora.getNombre()+"', fechainicio = TO_DATE('"+ actividadesMejora.getFechaInicio()+"','dd/mm/yyyy'), fechatermino =  TO_DATE('"+actividadesMejora.getFechaTermino()+"','dd/mm/yyyy'), estado = '"+actividadesMejora.getEstado()+"', detalle = '"+actividadesMejora.getDetalle()+"', profesional_id_profesional = '"+actividadesMejora.getProfesional().getId_profesional()+"', cliente_id_cliente = '"+actividadesMejora.getCliente().getId_cliente()+"' where idactividadmejora = '"+actividadesMejora.getIdActividadMejora()+"'";
 		return template.update(sql);
 	}
 
