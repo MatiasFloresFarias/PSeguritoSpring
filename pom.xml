@@ -47,7 +47,7 @@
 		<dependency>  
 		    <groupId>org.springframework</groupId>  
 		    <artifactId>spring-webmvc</artifactId>  
-		    <version>5.2.7.RELEASE</version>  
+		    <version>5.3.18</version>  
 		</dependency>  
 		
 	<!-- Spring JDBC (incluye Spring beans, context y core), permite gestionar la conexion a bbdd -->
